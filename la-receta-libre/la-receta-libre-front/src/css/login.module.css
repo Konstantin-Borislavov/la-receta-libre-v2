@@ -1,0 +1,33 @@
+.signIn{
+    background-color: #E4E9BE;
+    justify-content: right;
+}
+.signInForm{
+    display: flex;
+    flex-direction: column;
+    width: 600px; /* Ajusta el ancho según sea necesario */
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+.field{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre cada campo */
+}
+.label{
+    text-align: left; /* Alinea el texto del label a la izquierda */
+    margin-right: 20px; /* Ajusta el margen derecho según sea necesario */
+}
+.login{
+    background-color: #d3db95;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    width: 600px; /* Ajusta el ancho según sea necesario */
+    padding-left: 100px;
+    padding-right: 100px;
+}

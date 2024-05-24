@@ -1,0 +1,40 @@
+---
+import Section from '@/components/Section.astro'
+import SignIn from '@/components/SignIn';
+import Login from '@/components/Login';
+---
+
+<Section>
+    <!-- 
+    <select>
+        <option value="">Registrarme</option>
+        <option value="">iniciar sesión</option>
+    </select>-->
+    <div id="enterUser">
+    <div id="signIn"><SignIn client:load/><br></div>
+
+    <div id="logIn"><Login client:load/>
+    <br></div>
+    </div>
+
+
+</Section>
+
+<style>
+    #enterUser{
+        display: flex;
+        width: 100%;
+    }
+    #logIn{
+        background-color: #d3db95;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    #signIn{
+        background-color:#E4E9BE;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }   
+
+
+</style>
