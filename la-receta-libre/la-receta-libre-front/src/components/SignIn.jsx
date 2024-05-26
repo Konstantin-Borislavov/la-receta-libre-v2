@@ -38,7 +38,7 @@ const RegisterForm = () => {
     <div className={signInCSS.signIn}>
   
       <form onSubmit={newUser} className={signInCSS.signInForm}>
-        <h2 className={signInCSS.field}>Register</h2><br />
+        <h2 className={signInCSS.field}>Crear cuenta</h2><br />
   
         <div className={signInCSS.field}>
           <label className={signInCSS.label}>Name:</label>
