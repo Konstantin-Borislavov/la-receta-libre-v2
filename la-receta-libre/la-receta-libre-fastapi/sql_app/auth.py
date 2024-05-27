@@ -29,3 +29,15 @@ def create_token(name:str, id:int, expires_delta: timedelta):
     expires = datetime.now(timezone.utc) + expires_delta
     encode.update({'exp': expires})
     return jwt.encode(encode, SECRET_KEY, ALGORITHM)
+
+def decode_token_id(token: str):
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        id: int = payload.get("id")
+        name: str = payload.get("sub")
+        if id is not None:
+            return id
+        
+    except:
+        return 'Unable to decode token'
+

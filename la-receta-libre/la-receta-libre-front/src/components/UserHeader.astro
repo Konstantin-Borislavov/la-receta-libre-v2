@@ -1,0 +1,107 @@
+---
+import foto from '@/resources/la-receta-libre-logo.png'
+import search_icon from '@/resources/search-icon.png'
+import { Image } from 'astro:assets';
+
+---
+
+
+
+<header id="cabecera">
+    <div class="logo">
+        <a href="http://localhost:4321/" class="nav-link"><Image src={foto} alt="Logo" id="logo"/></a> 
+    </div>
+
+    <h2>LA RECETA LIBRE</h2>
+
+
+    <div id="search">
+        <label><Image src={search_icon} alt="Logo" id="search-icon"/></label>
+        <input type="search">
+    </div>
+
+    <nav>
+        <a href="/newRecipe/" class="nav-link">Crear receta</a>
+    </nav>
+
+
+</header>
+
+
+<style>
+
+#cabecera{
+position: sticky;
+top: 0;
+transition: top 0.3s;	
+background-color: #A2B38B;
+display: inline-flex;
+justify-content: space-between;
+align-items: baseline;
+width: 100%;
+padding-bottom: 4px;
+box-shadow: 0 0 4px #594D5B;
+
+animation: hide linear both;
+animation-duration: 1s;
+animation-timeline: scroll(root block);
+animation-range: 0 200px;
+
+
+}
+
+@keyframes hide {
+		from{
+			transform: translateY(0px);
+		}to{
+			transform: translateY(-100%);
+		}
+}
+
+
+
+nav{
+margin-right: 5vh;
+display: inline-flex;
+}
+
+nav a{
+
+padding-right: 10px;
+text-decoration:none ;
+color: black;
+}
+nav a:hover{
+color:#594D5B
+}
+
+#logo{
+display: inline-flex;
+max-width: 5rem;
+max-height: 4rem;
+margin-top: 5%;
+margin-left: 4%;
+}
+
+h2{
+    position: absolute; left: 100px;
+    position: absolute; bottom: 5px;
+    margin: 0%;
+}
+#search{
+    display: inline-flex;
+    position: absolute; right: 100px;
+    position: absolute; bottom: 5px;
+    margin-right: 8%;
+}
+#search-icon{
+display: inline-flex;
+max-width: 1.2rem;
+max-height: 1.2rem;
+margin-top: 5%;
+margin-right: 10px;
+}
+
+
+
+</style>

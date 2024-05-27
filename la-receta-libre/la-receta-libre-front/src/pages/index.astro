@@ -2,17 +2,25 @@
 import Login from '@/components/EnterUser.astro';
 import Header from '@/components/Header.astro';
 import Layout from '../layouts/Layout.astro';
+import HomePage from '@/components/HomePage'
+import Section from '@/components/Section.astro';
 
 ---
 
 <Layout title="Welcome to Astro.">
 	<Header/>
 
+	<Section>
+		<h1>Últimas recetas publicadas</h1>
 	
-	<main>
+		<div id="allRecipes"><HomePage/ client:load><br></div>
 	
+	</Section>
 
-	</main>
-	
 </Layout>
 
+<style>
+	h1{
+		margin-top: 60px;
+	}
+</style>

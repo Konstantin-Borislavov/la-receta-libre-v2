@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import axios from "axios";
 import signInCSS from '@/css/login.module.css'
+
 
 
 
@@ -11,6 +12,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
+  
   const LoginUser = async (e) => {
     e.preventDefault();
 
@@ -18,18 +20,18 @@ const LoginForm = () => {
       const response = await axios.post('http://localhost:8000/login-user', {
         email,
         password
-      })
-      .then(function (response) {
-        setMessage('Logeado con éxito')
-        localStorage.setItem('la-receta-libre-token:',response.access_token)
-        window.location.href = '/userPage';
-      })
+      });
 
-      }catch (error) {
-        setMessage('Error creating user');
-      }
-  
-  
+    
+      const accessToken = response.data.access_token
+      setMessage('Logeado con éxito');
+      localStorage.setItem('la-receta-libre-token', accessToken);
+
+      window.location.href = '/userPage';
+
+    } catch (error) {
+      setMessage('Error iniciando sesión');
+    }
   };
 
   return (
@@ -67,7 +69,14 @@ const LoginForm = () => {
           {message && <p className={signInCSS.field} >{message}</p>}
           </form>
 
+
+
     </div>
+
+
+    
+
+
   );
   
 };

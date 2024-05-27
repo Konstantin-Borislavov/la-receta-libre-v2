@@ -3,6 +3,7 @@ from database import engine,Base
 import models
 from fastapi.middleware.cors import CORSMiddleware
 from routes.user_routes import user_route
+from routes.recipe_routes import recipe_route
 
 
 
@@ -18,6 +19,7 @@ app.add_middleware(
 Base.metadata.create_all(bind= engine)
 
 app.include_router(user_route)
+app.include_router(recipe_route)
 
 
 

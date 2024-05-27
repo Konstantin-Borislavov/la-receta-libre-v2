@@ -2,6 +2,8 @@
 import Section from '@/components/Section.astro'
 import SignIn from '@/components/SignIn';
 import Login from '@/components/Login';
+import Gif from '@/components/Gif.astro';
+
 ---
 
 <Section>
@@ -10,17 +12,29 @@ import Login from '@/components/Login';
         <option value="">Registrarme</option>
         <option value="">iniciar sesión</option>
     </select>-->
+    <div id="container">
     <div id="enterUser">
     <div id="signIn"><SignIn client:load/><br></div>
 
     <div id="logIn"><Login client:load/>
     <br></div>
-    </div>
 
+   
+    </div>
+ 
+    <br><br>
+    <h1>¡Tú después de ver una receta aquí!</h1>
+    <br><br><br>
+    <Gif/>
 
 </Section>
 
 <style>
+    #container{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
     #enterUser{
         display: flex;
         width: 100%;
@@ -34,7 +48,7 @@ import Login from '@/components/Login';
         background-color:#E4E9BE;
         width: 100%;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    }   
-
+    }  
 
 </style>
+

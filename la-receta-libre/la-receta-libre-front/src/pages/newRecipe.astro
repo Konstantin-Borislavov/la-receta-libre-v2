@@ -1,0 +1,19 @@
+---
+import Login from '@/components/EnterUser.astro';
+import UserHeader from '@/components/UserHeader.astro'
+import Layout from '../layouts/Layout.astro';
+import CreateRecipe from '@/components/CreateRecipe';
+import Section from '@/components/Section.astro';
+
+---
+
+<Layout title="Welcome to Astro.">
+	<UserHeader/>
+
+	<Section>
+
+	<CreateRecipe/ client:load>
+
+
+	</Section>
+</Layout>
